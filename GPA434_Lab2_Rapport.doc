@@ -1,0 +1,45 @@
+1. Fedi Bessrour, Erika Bolduc, Lucas Pierru, Mike Zamis
+
+
+2.  a) Oui, l’interface fonctionne adéquatement pour les solutions peak et openbox.
+
+
+3.  a) La problématique est de trouver le prix minimum d’une pièce ayant un volume et le prix des matériaux donné. Nous avons également rajouté la solution
+	   du cercle le plus grand du 1er laboratoire qui est presque fonctionnelle à 100%, il manque seulement l'affichage des points
+	
+	b) Oui, Strategy1 (Strategy2 pour celle du cercle)
+	
+	c) Oui, Solution1 (Solution2 pour celle du cercle)
+	
+	d) Il est possible de modifier le volume de la pièce, les coûts des murs, du plancher et la proportion entre la largeur et la profondeur. 
+	
+	e) La rétroaction est l’affichage de la vue de face ainsi que la vue de droite de notre de pièce.
+	
+	f) Oui, le résultat de notre simulation converge vers une solution viable. Pour un volume de 150 m^2, le coût des murs de 30$ et 
+	le coût du plancher 50$, ça donne un prix optimal de 4973,44$ pour une largeur de 4,07, une hauteur de 4,52 et une profondeur de 8,14. 
+	La profondeur doit également être le double de la largeur. 
+	
+	g)  i) 8/10 puisque cette situation en construction est très fréquente.
+		
+		ii) 10/10 puisque tous les paramètres possibles sont pris en considération.
+		
+		iii) 8/10 puisque si la pièce était plus complexe il serait difficile de la visualiser correctement sans la vue de dessus.
+		
+		iv) 7/10 car nous avons choisi de faire un affichage en 2 dimensions à la place d’en faire un en 3 dimensions ce qui simplifie notre solution.
+		
+		v) 9/10 nous nous sommes fortement inspirés des solutions peak et openbox qui elles ont été faites de manière orienté objet.
+		
+		vi) 9/10 nous utilisons l’héritage (polymorphisme), les pointeurs de fonction et la librairie Qt qui sont tous des concepts de C++, vus en classe. 
+
+
+4. Le 1e connect de la liste contient l’émetteur parameterChanged de l’objet QDEEngineParameters et le récepteur est changedSimulationParameters de l’objet 
+QLab2. Le connect permet de changer les paramètres dans le code lorsqu’ils sont changés dans l’interface. 
+
+Le 2e connect de la liste contient l’émetteur parameterChanged de l’objet QDEEngineParameters et le récepteur est resetSimulation de l’objet QDEController. 
+Le connect permet de remettre à zéro la simulation lorsqu’un paramètre est changé.
+
+Le 4e connect de la liste contient l’émetteur parameterChanged de l’objet QDESolutionTab et le récepteur est resetSimulation de l’objet QDEController. 
+Le connect permet de mettre à jour la solution lorsqu’un autre onglet est choisi. 
+
+Le 8e connect de la liste contient l’émetteur oneEvolutionStepped de l’objet QDEAdapter et le récepteur est update de l’objet QDEHistoryChart. 
+Ce connect permet de mettre à jour le graphique quand on a une évolution. 
